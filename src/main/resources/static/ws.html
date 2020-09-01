@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+<script>
+    window.addEventListener('load', function (ev) {
+        var ws = new WebSocket('ws://localhost:8080/ws/greetings');
+        ws.addEventListener('open', function (e) {
+            ws.send("Abass is going to be great");
+        });
+        ws.addEventListener('message', function (msg) {
+            console.log('new message' + msg.data);
+        });
+    });
+</script>
+</body>
+
+</html>
